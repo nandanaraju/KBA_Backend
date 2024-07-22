@@ -1,12 +1,10 @@
 const fetch = require('node-fetch'); 
 
-
 const urls = [
     'https://jsonplaceholder.typicode.com/todos/1',
     'https://jsonplaceholder.typicode.com/todos/2',
     'https://jsonplaceholder.typicode.com/todos/3'
 ];
-
 
 async function fetchDataWithTiming(url) {
     const start = Date.now();
@@ -17,13 +15,11 @@ async function fetchDataWithTiming(url) {
     return data;
 }
 
-
 async function processUrls(urls) {
     for (const url of urls) {
         await fetchDataWithTiming(url);
     }
 }
-
 
 processUrls(urls).then(() => {
     console.log('All URLs processed');

@@ -1,9 +1,7 @@
 async function fetchWithTimeout(url, timeout) {
     const fetchPromise = fetch(url);
     const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => {
-            reject(new Error(`Request timed out after ${timeout}ms`));
-        }, timeout)
+        setTimeout(() => reject(new Error(`Request timed out after ${timeout}ms`)), timeout)
     );
 
     try {
@@ -17,6 +15,8 @@ async function fetchWithTimeout(url, timeout) {
         throw error;
     }
 }
+
 fetchWithTimeout('https://api.example.com/data', 5000)
     .then(data => console.log('Fetched data:', data))
     .catch(error => console.error('Error:', error));
+

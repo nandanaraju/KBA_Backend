@@ -9,9 +9,9 @@ async function fetchAndFilterPosts() {
         console.log('Titles of posts with userId 1:');
         titles.forEach(title => console.log(title));
     } catch (error) {
+
         console.error('Error fetching posts:', error.message);
     }
 }
 
-
-fetchAndFilterPosts();
+fetchAndFilterPosts(); 
